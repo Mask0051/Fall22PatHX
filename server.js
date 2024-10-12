@@ -4,7 +4,7 @@ import OpenAI from 'openai';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Load environment variables
+// Load environment variables 1
 dotenv.config();
 
 const app = express();
