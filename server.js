@@ -4,7 +4,6 @@ import OpenAI from 'openai';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Load environment variables 1
 dotenv.config();
 
 const app = express();
@@ -12,12 +11,15 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 
-// Get __dirname in ES module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
+});
+
+app.get('/', (req, res) => {
+    res.send("Welcome to the server!");
 });
 
 app.post('/api/openai', async (req, res) => {
@@ -39,15 +41,12 @@ app.post('/api/openai', async (req, res) => {
     }
 });
 
-// API route
 app.get('/api', (req, res) => {
     res.json({ message: "Hello, this is the backend" });
 });
 
-// Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-
