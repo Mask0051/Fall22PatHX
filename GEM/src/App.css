@@ -1,21 +1,40 @@
 #root {
-  max-width: 1280px;
+  background: linear-gradient(90deg, #FFE5B4, #BEC3EA);
+  height: 100vh;
+  width: 100vw;
+
   margin: 0 auto;
-  padding: 2rem;
+  padding-top: 2rem;
   text-align: center;
+  border: solid rebeccapurple;
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.test{
+  border: red solid;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+#chatBox{
+  background: linear-gradient(90deg, #FFE5B4, #BEC3EA);
+  overflow: auto;
+  height: 80vh;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#inputBox{
+  text-align: center;
+  width: 100%;
+}
+
+.mainGrid{
+  border: yellow solid;
+  max-width: 95vw;
+  height: 95vh;
+
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+#nav{
+  border: blue solid;
 }
 
 @keyframes logo-spin {
@@ -34,7 +53,7 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 1em;
 }
 
 .read-the-docs {
